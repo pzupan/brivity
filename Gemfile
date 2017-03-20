@@ -52,15 +52,10 @@ group :development, :test do
   gem 'byebug'
 
   # basic testing features
-  gem 'minitest'
-  gem 'minitest-rails'
-  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
 
-  # For better display
-  gem 'minitest-reporters'
-  
   # replace fixtures
-  gem 'factory_girl'
   gem 'factory_girl_rails'
 
   # auto clean data
