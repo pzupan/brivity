@@ -50,6 +50,24 @@ gem 'bootstrap-sass', '~> 3.3.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # basic testing features
+  gem 'minitest'
+  gem 'minitest-rails'
+  gem 'rails-controller-testing'
+
+  # For better display
+  gem 'minitest-reporters'
+  
+  # replace fixtures
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+
+  # auto clean data
+  gem 'database_cleaner'
+
+  # generate data
+  gem 'faker'
 end
 
 group :development do
