@@ -1,1 +1,19 @@
-test
+<div class='row'>
+
+  <div class='col-sm-offset-1 col-sm-10'>
+    <h4>Posts</h4>
+    <% if can? :edit, Post %>
+      <%= link_to "Add a New Post", new_post_path, role: "button", title: 'New Post' %>
+    <% else %>
+      <span>[You must be signed in to add a post]</span>
+    <% end %>
+  </div>
+
+  <div class="col-sm-offset-1 col-sm-10">
+    
+    <div id='posts-table-container'>
+      <%= render 'posts/posts_table', posts: @posts %>
+    </div>
+
+  </div>
+</div>

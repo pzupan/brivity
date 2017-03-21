@@ -1,0 +1,3 @@
+$("#comment-container-<%= @comment.id %>").html(
+   "<%= raw escape_javascript( render('posts/comment', comment: @comment ) ) %>"
+);

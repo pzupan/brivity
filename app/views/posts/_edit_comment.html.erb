@@ -1,0 +1,14 @@
+<div class='well collapse' id='add-comment-container'>
+  <%= form_for comment, remote: true, html: {class: 'form-horizontal'} do |f| %>
+    <%= f.hidden_field :post_id %>
+
+    <div class='form-group'>
+      <%= f.text_area :body, class: 'form-control', style: 'height: 20em', placeholder: 'Comment' %>
+    </div>
+
+    <div class='form-group text-right'>
+      <%= f.submit 'Submit', class: 'btn btn-primary btn-sm' %>
+      <%= link_to 'Cancel', post_path(post), class: 'btn btn-default btn-sm', title: 'Cancel' %>
+    </div>
+  <% end %>
+</div>

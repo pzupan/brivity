@@ -1,0 +1,5 @@
+<% post.comments.includes(:user).order(:created_at).each do |comment| %>
+  <div class='row' id="comment-container-<%= comment.id %>">
+    <%= render 'posts/comment', comment: comment %>
+  </div>
+<% end %>

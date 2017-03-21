@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :comment do
-    body 'Test body'
+    body Faker::Lorem.paragraph
   end
 end

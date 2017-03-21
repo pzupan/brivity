@@ -1,0 +1,49 @@
+<div class='row' >
+  <div class='col-sm-12'>
+    <div class='pull-right'><%= paginate posts %></div>
+  </div>
+</div>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th class='text-center'>Comments</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if posts.present? %>
+      <% posts.each do |post| %>
+        <tr>
+          <td>
+            <div><%= link_to post.title, post_path(post), title: post.title %></div>
+            <div><%= post.user.full_name %>, <%= post.created_at.to_s(:humanized_ago) %></div>
+          </td>
+
+          <td class='text-center'>
+            <div><%= pluralize(post.comments.length, 'Comment') %></div>
+          </td>
+          
+          <td class='nowrap'>
+            <% if can?(:edit, post) %>
+              <%= link_to 'Edit', edit_post_path(post, page: params[:page]), title: 'Edit Post' %>
+            <% end %>
+            <% if can?(:delete, post) %>
+              <%= link_to 'Delete', post_path(post, page: params[:page]), data: {confirm: "Are you sure?"}, method: :delete, title: 'Delete Post' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr><td colspan='3'>No Posts Found</td></tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='row'  style='font-weight: bold;'>
+  <div class='col-sm-12'>
+    <hr/>
+    <div class='pull-right'><%= paginate posts %></div>
+  </div>
+</div>

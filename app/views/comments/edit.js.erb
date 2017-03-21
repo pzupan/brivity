@@ -1,0 +1,5 @@
+$("#comment-container-<%= @comment.id %>").html(
+   "<%= raw escape_javascript( render('posts/edit_comment', comment: @comment, post: @comment.post ) ) %>"
+);
+
+$('#add-comment-container').collapse('show');

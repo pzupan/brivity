@@ -1,0 +1,7 @@
+$("#comments-container").html(
+   "<%= raw escape_javascript( render('posts/comments', post: @comment.post ) ) %>"
+);
+
+$('#comment_body').val('');
+$('#comment_body').data("wysihtml5").editor.clear();
+$('#add-comment-container').collapse('hide');

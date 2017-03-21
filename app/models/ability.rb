@@ -33,6 +33,8 @@ class Ability
 
     if !user.new_record?
         can :manage, :all
+    else
+        can :view, Post
     end
     
   end

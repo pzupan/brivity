@@ -1,0 +1,7 @@
+
+$("#comments-container").html(
+   "<%= raw escape_javascript( render('posts/comments', post: @comment.post ) ) %>"
+);
+
+$('#comment_body').val('');
+$('#add-comment-container').collapse('hide');

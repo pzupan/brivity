@@ -30,13 +30,10 @@
 
                   <ul id='dropdown-login' class='dropdown-menu'>
                      <li>
-                        <%= link_to 'Password', edit_user_registration_path(password: true) %>
-                     </li>
-                     <li>
                         <%= link_to 'Profile', edit_user_registration_path %>
                      </li>
                      <li>
-                        <%= link_to 'Sign Out', destroy_user_session_path %>
+                        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
                      </li>
                   </ul>
                </li>
