@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     authorize! :view, Post
-    @posts = Post.includes(:comments).order(:created_at).page(params[:page])
+    @posts = Post.includes(:user, comments: :user).order(created_at: :desc).page(params[:page])
     respond_with @posts
   end
 
